@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lister Training-Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link href="https://getbootstrap.com/docs/5.1/examples/footers/footers.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.1/examples/sidebars/sidebars.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <!-- svg image icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="justify" viewBox="0 0 16 16">
+
+            <path fill-rule="evenodd"
+                d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+        </symbol>
+        <symbol id="home" viewBox="0 0 16 16">
+            <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+        </symbol>
+        <symbol id="speedometer2" viewBox="0 0 16 16">
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+            <path fill-rule="evenodd"
+                d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
+        </symbol>
+        <symbol id="compass" viewBox="0 0 16 16">
+            <path
+                d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+            <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+        </symbol>
+        <symbol id="library" viewBox="0 0 16 16">
+            <path
+                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z" />
+            <path
+                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z" />
+        </symbol>
+        <symbol id="table" viewBox="0 0 16 16">
+            <path
+                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z" />
+        </symbol>
+
+        <symbol id="grid" viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+        </symbol>
+
+
+        <symbol id="magnify" viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </symbol>
+
+
+
+        <symbol id="bell" viewBox="0 0 16 16">
+            <path
+                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+        </symbol>
+
+
+    </svg>
+
+    
+    <header class="container-fluid py-3 mb-2">
+        <!-- Nav section starts here -->
+        <div class="rows">
+            <div class="container-fluid d-grid gap-3 align-items-center col-sm-12">
+                <ul class="nav nav-pills">
+                    <li class=" nav-item me-3">
+                        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-black text-decoration-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                            aria-controls="offcanvasExample">
+                            <svg class="bi me-2" width="40" height="32">
+                                <use xlink:href="#justify"></use>
+                            </svg>
+                        </a>
+                       
+                    </li>
+                    <li class="nav-item me-3 col-sm-1">
+                        <a href="#">
+                            <img src="./assets/images/logo.png" alt="YouTube Logo" class="youtubeLogo" />
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 col-sm-6">
+                        <form class="w-100">
+                            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item me-3 col-sm-2"><a href="#">
+                            <img src="./assets/images/mike.png" width="30" alt="Press to talk" />
+                        </a></li>
+                    <li class="nav-item me-3"><a href="#">
+                            <img src="./assets/images/video-plus.svg" alt="Upload Video" />
+                        </a></li>
+                    <li class="nav-item me-3"> <a href="#">
+                            <img src="./assets/images/apps.svg" alt="Apps" />
+                        </a></li>
+                    <li class="nav-item"><a href="#"
+                            class="d-flex mb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+                            <svg class="bi me-2" width="22" height="32">
+                                <use xlink:href="#bell"></use>
+                            </svg>
+                        </a></li>
+                    <li class="nav-item>
+                        <a href=" #" class="d-block link-dark text-decoration-none" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="30" height="32" class="rounded-circle">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Nav bar ends here -->
+        <!-- Side overlay section starts here -->
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                
+                <a href="javascript:void(0)" data-bs-dismiss="offcanvas" aria-label="Close" class="text-reset">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#justify"></use>
+                    </svg>
+                    
+                </a>
+                <a href="/"><img src="./assets/images/logo.png" alt="YouTube Logo" class="youtubeLogo" /></a>
+            </div>
+            <div class="offcanvas-body">
+              
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#compass"></use>
+                        </svg>
+                        Explore
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                        Subscriptions
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#library"></use>
+                        </svg>
+                        Library
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#library"></use>
+                        </svg>
+                        History
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#library"></use>
+                        </svg>
+                        Your Videos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#library"></use>
+                        </svg>
+                        Watch Later
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+            </ul>
+              
+            </div>
+          </div>
+     <!-- Side overlay section ends here -->
+    </header>
+    <!-- Main page section starts here -->
+    <div class="container-fluid pb-3 main">
+        <div class="d-grid gap-3" style="grid-template-columns: .15fr 2fr;">
+            <!--side bar navigation starts-->
+            <div class="bg-white border-1">
+                <div class="sideNavBar ">
+                    <div class="d-flex flex-column flex-shrink-0" style="width: 5rem;">
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" aria-current="page">
+                                    <div class="sideNavBarIcon"><svg class="bi me-2" width="16" height="16">
+                                            <use xlink:href="#home"></use>
+                                        </svg></div>
+                                    <div class="sideNavBarTitle">Home</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-black">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#compass"></use>
+                                    </svg>
+                                    <div class="sideNavBarTitle">Explore</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-black">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#table"></use>
+                                    </svg>
+                                    <div class="sideNavBarTitle">Subscriptions</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-black">
+                                    <svg class="bi me-2" width="16" height="16">
+                                        <use xlink:href="#library"></use>
+                                    </svg>
+                                    <div class="sideNavBarTitle">Library</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Side bar navigation ends -->
+            <div class="bg-white border-3">
+                <!-- category section begins -->
+                <ul class="nav nav-pills pb-3 border-bottom">
+                    <li class="nav-item me-2"><button class="category active">All</button></li>
+                    <li class="nav-item me-2"><button class="category">Category 1</button></li>
+                    <li class="nav-item me-2"><button class="category">Music</button></li>
+                    <li class="nav-item me-2"><button class="category">Movies</button></li>
+                    <li class="nav-item me-2"><button class="category">Cricket</button></li>
+                    <li class="nav-item me-2"><button class="category">Courses</button></li>
+                    <li class="nav-item me-2"><button class="category">HTML 5</button></li>
+                    <li class="nav-item me-2"><button class="category">UI Tricks</button></li>
+                    <li class="nav-item me-2"><button class="category">Cooking</button></li>
+                </ul>
+
+                <!-- category section ends -->
+                <div class="videos">
+                    <section class="videoSection">
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="videoContainer">
+                            <a href="#" class="thumbnail" data-duration="12:24">
+                                <img class="thumbnailImage" src="http://unsplash.it/250/150?gravity=center" />
+                            </a>
+                            <div class="videoBottomSection">
+                                <a href="#">
+                                    <img class="channelIcon" src="http://unsplash.it/36/36?gravity=center" />
+                                </a>
+                                <div class="videoDetails">
+                                    <a href="#" class="videoTitle">Video Title</a>
+                                    <a href="#" class="videoChannelName">Channel Name</a>
+                                    <div class="video-metadata">
+                                        <span>12K views</span>
+                                        •
+                                        <span>1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main section ends here -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
